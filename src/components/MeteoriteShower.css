@@ -1,0 +1,111 @@
+/* src/components/MeteoriteShower.css */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black; /* Background image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's above other content */
+    overflow: hidden; /* Prevent scrollbars */
+    position: relative;
+  }
+  
+  .meteorites-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .meteorite {
+    position: absolute;
+    border-radius: 50%;
+    animation: orbitAnimation linear infinite;
+  }
+  
+  @keyframes orbitAnimation {
+    0% {
+      transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+  }
+  
+  .solar-text {
+    position: absolute;
+    font-size: 3rem;
+    color: #fff; /* Text color */
+    font-weight: bold;
+    animation: textRoaming 4s ease-in-out forwards, settle 1s 4s ease-out forwards;
+    z-index: 1; /* Ensure text is above meteorites */
+  }
+  
+  @keyframes textRoaming {
+    0% {
+      transform: translateX(-100vw) translateY(-100vh);
+    }
+    50% {
+      transform: translateX(100vw) translateY(100vh);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }
+  
+  @keyframes settle {
+    0% {
+      transform: scale(1) translateY(0);
+    }
+    100% {
+      transform: scale(1.5) translateY(-50%);
+    }
+  }
+  
+  .stars-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure it doesn't interfere with interactions */
+  }
+  
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background: white; /* Star color */
+    animation: starTwinkle 1.5s infinite ease-in-out;
+  }
+  
+  @keyframes starTwinkle {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+  
+  .fade-out {
+    animation: fadeOut 1s forwards; /* Shorter fade-out duration */
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  

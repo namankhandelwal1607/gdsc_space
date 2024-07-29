@@ -10,6 +10,7 @@ import InfoCard1 from '../components/InfoCard1';
 import InfoCard from '../components/InfoCard';
 import InfoCard2 from '../components/InfoCard2';
 import rocketimg from '../assets/rocketearth.png';
+import "./HomeStyle.css";
 
 function Earth() {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 600);
@@ -36,48 +37,6 @@ function Earth() {
     width: '100vw',
     position: 'relative',
     overflow: 'hidden',
-  };
-
-  const earthImageStyle1 = {
-    position: 'absolute',
-    bottom: isSmallScreen ? '5%' : '-35%',
-    left: isSmallScreen ? '60%' :'50%',
-    transform: 'translate(-50%, 50%)',
-    width: isSmallScreen ? '70%' : '80%',
-    zIndex: 1,
-    opacity: 1,
-  };
-
-  const earthImageStyle2 = {
-    position: 'absolute',
-    bottom: isSmallScreen ? '-32%' : '-37%',
-    left: '50%',
-    transform: 'translate(-50%, 50%)',
-    width: isSmallScreen ? '92%' : '82%',
-    zIndex: 1,
-    opacity: 1,
-  };
-
-  const arrowImageStyle = {
-    position: 'absolute',
-    right: isSmallScreen ? '2%' : '15%',
-    bottom: isSmallScreen ? '30%' : '60%',
-    transform: 'translate(-50%, 50%)',
-    zIndex: 1,
-    width: isSmallScreen ? '10%' : '15%',
-    height: isSmallScreen ? '20%' : '30%',
-    opacity: 1,
-  };
-
-  const rocketImageStyle = {
-    position: 'absolute',
-    left: isSmallScreen ? '-100%' : '5%',
-    bottom: isSmallScreen ? '30%' : '40%',
-    transform: 'translate(-50%, 50%)',
-    zIndex: 1,
-    width: isSmallScreen ? '15%' : '10%',
-    height: isSmallScreen ? '20%' : '20%',
-    opacity: 1,
   };
 
   const infoCardStyle = {
@@ -114,22 +73,22 @@ function Earth() {
       <img
         src={earthimg}
         alt="Earth"
-        style={earthImageStyle1}
+        className="absolute bottom-[5%] sm:bottom-[-35%] left-[60%] sm:left-[50%] transform translate-x-[-50%] translate-y-[50%] w-[70%] sm:w-[80%] z-[1] opacity-[1]"
       />
       <img
         src={earthimg1}
         alt="Earth"
-        style={earthImageStyle2}
+        className="absolute bottom-[-32%] sm:bottom-[-37%] left-[50%] transform translate-x-[-50%] translate-y-[50%] w-[92%] sm:w-[82%] z-[1] opacity-[1] "
       />
       <img
         src={arrowimg}
         alt="Arrow"
-        style={arrowImageStyle}
+        className="absolute right-[2%] sm:right-[15%] bottom-[30%] sm:bottom-[60%] transform translate-x-[-50%] translate-y-[50%] w-[10%] sm:w-[15%] h-[20%] sm:h-[30%] z-[1] opacity-[1]"
       />
       <img
         src={rocketimg}
         alt="Rocket"
-        style={rocketImageStyle}
+        className="absolute left-[-100%] sm:left-[5%] bottom-[30%] sm:bottom-[40%] transform translate-x-[-50%] translate-y-[50%] w-[15%] sm:w-[10%] h-[20%] sm:h-[20%] z-[1] opacity-[1]"
       />
 
       <div style={infoCardStyle}>

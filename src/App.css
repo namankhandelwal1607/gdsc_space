@@ -35,3 +35,22 @@
     animation: fall 1s ease-out;
   }
   
+/* index.css or App.css */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: url('./assets/background.png') no-repeat center /* Black track */
+}
+
+::-webkit-scrollbar-thumb {
+  background:black; /* Use the image */
+  background-size: cover; /* Ensure the image covers the thumb */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: url('./assets/background.png') no-repeat center center; /* Same image on hover */
+  background-size: cover;
+}

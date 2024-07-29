@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import backgroundImage from '../assets/background.png';
 import Starfield from '../components/StarField';
 import Sunimg from '../assets/sun.png';
@@ -9,78 +9,40 @@ import diameter from "../assets/diameter.png";
 import temperature from "../assets/temperature.png";
 
 function Sun() {
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 450);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 450);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   const title = '. Sun';
   const description = 'The Sun is a huge, glowing ball of hot plasma at the centre of our solar system and provides the vital energy needed for life on Earth. This energy radiates outward in the form of light and heat, providing warmth and light to the entire solar system.';
 
-  const containerStyle = {
-    backgroundImage: `url(${backgroundImage})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    height: '100vh',
-    width: '100vw',
-    position: 'relative',
-    overflow: 'hidden',
-  };
-
-  
-
-  const sunimgStyle = {
-    position: 'absolute',
-    top: isSmallScreen ? '10%' : '-130%',
-    left: isSmallScreen ? '30%' :'0',
-    width: isSmallScreen ? '70%' : '100%',
-    zIndex: '10',
-    height: isSmallScreen ? '70%' : 'auto',
-  };
-
-  const infoCardStyle = {
-    position: 'absolute',
-    top: isSmallScreen ? '60%' : '40%',
-    left: isSmallScreen ? '7%' :'10%',
-    width: isSmallScreen ? '90%' : '60%',
-    zIndex: '10',
-    opacity: '1', 
-    padding: '0 16px',
-  };
-
-  const infoCard1Style = {
-    position: 'absolute',
-    top: isSmallScreen ? '25%' : '70%',
-    left: isSmallScreen ?'-30%': '10%',
-    width: '80%',
-    display: 'flex',
-    flexDirection: isSmallScreen ? 'column' : 'row',
-    gap: isSmallScreen ? '16px' : '8px',
-    padding: '0 16px',
-  };
-
   return (
-    <div style={containerStyle}>
+    <div className="relative w-screen h-screen overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
       <Starfield />
 
-    
-
-      <div style={sunimgStyle}>
-        <img src={Sunimg} alt="Sun" style={{ width: '100%' }} />
+      {/* <div className="absolute top-[13%] left-[4%] sm:top-[-55%] sm:left-0 sm:w-full sm:h-[155%] w-0 h-0 z-0 opacity-50">
+        <img src={sunshade} alt="Sun Shade" className="w-full" />
       </div>
 
-      <div style={infoCardStyle}>
+      <div className="absolute top-[10%] left-[30%] sm:top-[-130%] sm:left-0 sm:w-full sm:h-auto w-[70%] h-[70%] z-10">
+        <img src={Sunimg} alt="Sun" className="w-full h-full" />
+      </div>
+       */}
+
+
+         {/* Sun Shade */}
+        {/* Sun Shade */}
+        <div className="absolute top-[4%] left-[30%] sm:top-[10%] sm:left-[2%] sm:w-[50%] sm:h-[120%] md:top-[-20%] md:left-[0%] md:w-full md:h-[120%] w-[80%] h-[80%] z-0 opacity-50">
+        <img src={sunshade} alt="Sun Shade" className="w-full h-full" />
+      </div>
+
+      {/* Sun Image */}
+      <div className="absolute top-[15%] left-[30%] sm:top-[0%] sm:left-[10%] sm:w-[60%] md:top-[-80%] md:left-[15%] md:w-[90%] md:h-auto w-[70%] h-[70%] z-10">
+        <img src={Sunimg} alt="Sun"  />
+      </div>
+
+      
+      <div className="absolute top-[60%] left-[7%] sm:top-[40%] sm:left-[10%] sm:w-[60%] w-[90%] z-10 p-4">
         <InfoCard title={title} description={description} />
       </div>
 
-      <div style={infoCard1Style}>
+      <div className="absolute top-[25%] left-[-30%] sm:top-[70%] sm:left-[10%] sm:w-[80%] flex flex-col sm:flex-row gap-4 sm:gap-2 w-[80%] p-4 z-10">
         <InfoCard1 symbol={diameter} functionLabel="Diameter" value1="870,000" value2="Miles" />
         <InfoCard1 symbol={temperature} functionLabel="Temperature" value1="±5,500°" value2="Celsius" />
       </div>

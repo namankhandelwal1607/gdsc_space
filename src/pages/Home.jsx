@@ -20,9 +20,9 @@ import stars from '../assets/stars.svg';
 import '../App.css';
 import { Link } from 'react-scroll';
 import './HomeStyle.css';
-
+// import MeteoriteShower from '../components/MeteoriteShower';
 function Home() {
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 450);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 850);
 
   useEffect(() => {
     const handleResize = () => {
@@ -80,15 +80,17 @@ function Home() {
   const homeTextStyle = {
     position: 'absolute',
     top: '50%',
-    left: isSmallScreen ? '35%':'50%',
+    left: isSmallScreen ? '50%':'50%',
     transform: 'translate(-50%, -50%)',
     textAlign: 'center',
     zIndex: 4,
     fontFamily: 'Nova Square, sans-serif',
+    width: isSmallScreen ? '50%':null,
   };
 
   return (
     <div style={containerStyle}>
+        {/* <MeteoriteShower /> */}
       <Starfield />
       <img src={stars} alt="Stars SVG" style={starFieldStyle} />
       <img src={lb} alt="Lower Bottom SVG" style={svgStyle(0, 0, null, null)} />
@@ -125,7 +127,7 @@ function Home() {
             src={p1}
             alt="p1"
             className="falling p1"
-            style={imageStyle(isSmallScreen ? '10%':'70px', isSmallScreen ? null:'-2%', isSmallScreen ? null:null,isSmallScreen ? '3%': null, isSmallScreen ? '80px' : '160px', isSmallScreen ? '80px' : '160px')}
+            style={imageStyle(isSmallScreen ? '20%':'70px', isSmallScreen ? '3%':'-2%', isSmallScreen ? null:null,isSmallScreen ? '3%': null, isSmallScreen ? '80px' : '160px', isSmallScreen ? '80px' : '160px')}
           />
         </Link>
         <Link to="venus" smooth={true} duration={500}>
@@ -133,7 +135,7 @@ function Home() {
             src={p2}
             alt="p2"
             className="falling p2"
-            style={imageStyle(isSmallScreen ? '20%':'300px', isSmallScreen ? null:'250px', isSmallScreen ? null:null, isSmallScreen ? '3%':null, isSmallScreen ? '80px' : '62.67px', isSmallScreen ? '80px' : '62.67px')}
+            style={imageStyle(isSmallScreen ? '40%':'300px', isSmallScreen ? '3%':'250px', isSmallScreen ? null:null, isSmallScreen ? '3%':null, isSmallScreen ? '80px' : '62.67px', isSmallScreen ? '80px' : '62.67px')}
           />
         </Link>
         <Link to="saturn" smooth={true} duration={500}>
@@ -141,7 +143,7 @@ function Home() {
             src={p3}
             alt="p3"
             className="falling p3"
-            style={imageStyle(isSmallScreen ? '60%':'250px', isSmallScreen ? null:'-10%', isSmallScreen ? null:null, isSmallScreen ? '3%':null, isSmallScreen ? '80px' : '400px', isSmallScreen ? '80px' : '400px')}
+            style={imageStyle(isSmallScreen ? '40%':'250px', isSmallScreen ? null:'-10%', isSmallScreen ? null:null, isSmallScreen ? '3%':null, isSmallScreen ? '80px' : '400px', isSmallScreen ? '80px' : '400px')}
           />
         </Link>
         <Link to="uranus" smooth={true} duration={500}>
@@ -149,10 +151,10 @@ function Home() {
             src={p4}
             alt="p4"
             className="falling p4"
-            style={imageStyle(isSmallScreen ? '70%':null,isSmallScreen ? null: '-1%',isSmallScreen ? null: '-5%', isSmallScreen ? '3%':null, isSmallScreen ? '80px' : '120px', isSmallScreen ? '80px' : '120px')}
+            style={imageStyle(isSmallScreen ? '60%':null,isSmallScreen ? null: '-1%',isSmallScreen ? null: '-5%', isSmallScreen ? '3%':null, isSmallScreen ? '80px' : '120px', isSmallScreen ? '80px' : '120px')}
           />
         </Link>
-        <Link to="neptune" smooth={true} duration={500}>
+       <Link to="neptune" smooth={true} duration={500}>
           <img
             src={p5}
             alt="p5"
@@ -165,15 +167,15 @@ function Home() {
             src={p6}
             alt="p6"
             className="falling p6"
-            style={imageStyle(isSmallScreen ? '50%':null, isSmallScreen ? null:null, isSmallScreen ? null:'-15%', isSmallScreen ? '3%':'-6%', isSmallScreen ? '80px' : '400px', isSmallScreen ? '80px' : '400px')}
+            style={imageStyle(isSmallScreen ? '20%':null, isSmallScreen ? null:null, isSmallScreen ? null:'-15%', isSmallScreen ? '3%':'-6%', isSmallScreen ? '80px' : '400px', isSmallScreen ? '80px' : '400px')}
           />
         </Link>
-        <Link to="mars" smooth={true} duration={500}>
+         <Link to="mars" smooth={true} duration={500}>
           <img
             src={p7}
             alt="p7"
             className="falling p7"
-            style={imageStyle(isSmallScreen ? '40%':'100px', isSmallScreen ? null:null, isSmallScreen ? null:null, isSmallScreen ? '3%':'-5%', isSmallScreen ? '10%':isSmallScreen ? '80px' : '300px', isSmallScreen ? '80px' : '300px')}
+            style={imageStyle(isSmallScreen ? '80%':'100px', isSmallScreen ? '3%':null, isSmallScreen ? null:null, isSmallScreen ? null:'-5%', isSmallScreen ? '80px': null, isSmallScreen ? '80px' : '300px')}
           />
         </Link>
         <Link to="earth" smooth={true} duration={500}>
@@ -181,7 +183,7 @@ function Home() {
             src={p8}
             alt="p8"
             className="falling p8"
-            style={imageStyle(isSmallScreen ? '30%':'20%', isSmallScreen ? null:null, isSmallScreen ? null:null, isSmallScreen ? '3%':'40%', isSmallScreen ? '80px' : '140px', isSmallScreen ? 'px' : '144px')}
+            style={imageStyle(isSmallScreen ? '60%':'20%', isSmallScreen ? '3%':null, isSmallScreen ? null:null, isSmallScreen ? null:'40%', isSmallScreen ? '80px' : '140px', isSmallScreen ? 'px' : '144px')}
           />
         </Link>
       </div>
