@@ -109,7 +109,6 @@ const Starfield = () => {
       window.removeEventListener('dblclick', onDoubleClick);
       window.removeEventListener('resize', handleResize);
 
-      // Clear all timeouts on unmount
       starburstTimeouts.current.forEach(clearTimeout);
     };
   }, []);

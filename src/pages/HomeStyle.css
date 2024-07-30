@@ -31,9 +31,6 @@
   
 }
 
-/* HomeStyle.css */
-
-/* Keyframes for floating animation */
 @keyframes float {
   0% {
     transform: translateY(0);
@@ -46,7 +43,6 @@
   }
 }
 
-/* Floating planets */
 .falling {
   animation: float 6s ease-in-out infinite;
   transition: transform 0.5s ease-in-out;

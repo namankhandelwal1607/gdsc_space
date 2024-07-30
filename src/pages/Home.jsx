@@ -20,7 +20,6 @@ import stars from '../assets/stars.svg';
 import '../App.css';
 import { Link } from 'react-scroll';
 import './HomeStyle.css';
-// import MeteoriteShower from '../components/MeteoriteShower';
 function Home() {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 850);
 
@@ -90,7 +89,6 @@ function Home() {
 
   return (
     <div style={containerStyle}>
-        {/* <MeteoriteShower /> */}
       <Starfield />
       <img src={stars} alt="Stars SVG" style={starFieldStyle} />
       <img src={lb} alt="Lower Bottom SVG" style={svgStyle(0, 0, null, null)} />

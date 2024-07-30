@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 function LearnMore() {
-  // Inline styles for the button
   const buttonStyles = {
     backgroundImage: `url(${background})`,
     backgroundSize: 'cover',
@@ -20,16 +19,14 @@ function LearnMore() {
     cursor: 'pointer',
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
     borderRadius: '8px',
-    transition: 'all 0.3s ease', // Smooth transition for responsiveness
+    transition: 'all 0.3s ease', 
   };
 
-  // Inline styles for small screens
   const smallScreenStyles = {
     padding: '10px 20px',
     fontSize: '1.25rem',
   };
 
-  // Function to get responsive styles based on window width
   const getResponsiveStyles = () => {
     if (typeof window !== 'undefined' && window.innerWidth <= 450) {
       return smallScreenStyles;

@@ -16,23 +16,11 @@ function Sun() {
     <div className="relative w-screen h-screen overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
       <Starfield />
 
-      {/* <div className="absolute top-[13%] left-[4%] sm:top-[-55%] sm:left-0 sm:w-full sm:h-[155%] w-0 h-0 z-0 opacity-50">
-        <img src={sunshade} alt="Sun Shade" className="w-full" />
-      </div>
-
-      <div className="absolute top-[10%] left-[30%] sm:top-[-130%] sm:left-0 sm:w-full sm:h-auto w-[70%] h-[70%] z-10">
-        <img src={Sunimg} alt="Sun" className="w-full h-full" />
-      </div>
-       */}
-
-
-         {/* Sun Shade */}
-        {/* Sun Shade */}
+ 
         <div className="absolute top-[4%] left-[30%] sm:top-[10%] sm:left-[2%] sm:w-[50%] sm:h-[120%] md:top-[-20%] md:left-[0%] md:w-full md:h-[120%] w-[80%] h-[80%] z-0 opacity-50">
         <img src={sunshade} alt="Sun Shade" className="w-full h-full" />
       </div>
 
-      {/* Sun Image */}
       <div className="absolute top-[15%] left-[30%] sm:top-[0%] sm:left-[10%] sm:w-[60%] md:top-[-80%] md:left-[15%] md:w-[90%] md:h-auto w-[70%] h-[70%] z-10">
         <img src={Sunimg} alt="Sun"  />
       </div>

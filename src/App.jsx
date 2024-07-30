@@ -19,14 +19,14 @@ const customScrollbar = {
     width: '12px',
   },
   '::-webkit-scrollbar-track': {
-    background: '#000', // Black track
+    background: '#000', 
   },
   '::-webkit-scrollbar-thumb': {
-    background: '#000', // Black thumb
+    background: '#000', 
     borderRadius: '6px',
   },
   '::-webkit-scrollbar-thumb:hover': {
-    background: '#000', // Black thumb on hover
+    background: '#000',
   },
 };
 
